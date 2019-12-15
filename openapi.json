@@ -1,0 +1,498 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Generated API",
+    "version" : "1.0"
+  },
+  "paths" : {
+    "/rest/hello" : {
+      "get" : {
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/source/addDanmaku" : {
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AddDanmaku"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/source/listDanmakus" : {
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ListDanmakus"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ListDanmakusResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/user/addOrUpdateGameCharacter" : {
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "multipart/form-data" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "uuid" : {
+                    "type" : "string"
+                  },
+                  "email" : {
+                    "type" : "string"
+                  },
+                  "name" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/user/editProfile" : {
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "multipart/form-data" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "email" : {
+                    "type" : "string"
+                  },
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "password" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/user/getUserAvatar/{hash}.png" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "hash",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    },
+    "/rest/user/getUserProfile/{uuid}" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "uuid",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/UserProfileResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/user/login" : {
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/LoginRegister"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/LoginRegisterResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/user/register" : {
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/LoginRegister"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/LoginRegisterResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/user/uploadUserAvatar" : {
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "multipart/form-data" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "icon" : {
+                    "type" : "array",
+                    "items" : {
+                      "format" : "byte",
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/user/verify" : {
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Verify"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/VerifyResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "AddDanmaku" : {
+        "type" : "object",
+        "properties" : {
+          "os" : {
+            "type" : "string"
+          },
+          "token" : {
+            "type" : "string"
+          },
+          "file" : {
+            "type" : "string"
+          },
+          "originalLineNum" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "revision" : {
+            "type" : "string"
+          },
+          "url" : {
+            "type" : "string"
+          },
+          "text" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Result" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ListDanmakus" : {
+        "type" : "object",
+        "properties" : {
+          "os" : {
+            "type" : "string"
+          },
+          "token" : {
+            "type" : "string"
+          },
+          "file" : {
+            "type" : "string"
+          },
+          "originalLineNum" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "revision" : {
+            "type" : "string"
+          },
+          "url" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Danmaku" : {
+        "type" : "object",
+        "properties" : {
+          "author" : {
+            "$ref" : "#/components/schemas/User"
+          },
+          "convertedUrl" : {
+            "type" : "string"
+          },
+          "file" : {
+            "type" : "string"
+          },
+          "likeUsers" : {
+            "$ref" : "#/components/schemas/ListUser"
+          },
+          "originalLineNum" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "revision" : {
+            "type" : "string"
+          },
+          "text" : {
+            "type" : "string"
+          },
+          "time" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "url" : {
+            "type" : "string"
+          },
+          "uuid" : {
+            "type" : "string"
+          }
+        }
+      },
+      "User" : {
+        "type" : "object",
+        "properties" : {
+          "avatarHash" : {
+            "type" : "string"
+          },
+          "creator" : {
+            "type" : "boolean"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "uuid" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ListUser" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/User"
+        }
+      },
+      "ListDanmakusResult" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string"
+          },
+          "danmakus" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Danmaku"
+            }
+          }
+        }
+      },
+      "UserProfileResult" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string"
+          },
+          "user" : {
+            "$ref" : "#/components/schemas/User"
+          }
+        }
+      },
+      "LoginRegister" : {
+        "type" : "object",
+        "properties" : {
+          "email" : {
+            "type" : "string"
+          },
+          "os" : {
+            "type" : "string"
+          },
+          "password" : {
+            "type" : "string"
+          }
+        }
+      },
+      "LoginRegisterResult" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string"
+          },
+          "token" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Verify" : {
+        "type" : "object",
+        "properties" : {
+          "os" : {
+            "type" : "string"
+          },
+          "token" : {
+            "type" : "string"
+          }
+        }
+      },
+      "VerifyResult" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "uuid" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}

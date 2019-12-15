@@ -1,0 +1,52 @@
+{
+    "os": "string",
+    "token": "string",
+    "file": "string",
+    "originalLineNum": 0,
+    "revision": "string",
+    "url": "string",
+    "text": "string"
+}
+这是addDanmaku的请求 
+{
+    "status": "string"
+}
+这是addDanmaku的返回
+
+
+
+ {
+    "os": "string",
+    "token": "string",
+    "file": "string",
+    "originalLineNum": 0,
+    "revision": "string",
+    "url": "string"
+}
+这是listDanmakus的请求 {
+    "status": "string",
+    "danmakus": [{
+        "author": {
+            "avatarHash": "string",
+            "creator": true,
+            "email": "string",
+            "name": "string",
+            "uuid": "string"
+        },
+        "convertedUrl": "string",
+        "file": "string",
+        "likeUsers": [{
+            "avatarHash": "string",
+            "creator": true,
+            "email": "string",
+            "name": "string",
+            "uuid": "string"
+        }],
+        "originalLineNum": 0,
+        "revision": "string",
+        "text": "string",
+        "time": 0,
+        "url": "string",
+        "uuid": "string"
+    }]
+}
