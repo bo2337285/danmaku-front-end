@@ -13,7 +13,7 @@ export default {
   },
   // 更新列表数据
   async listDanmakus({ state, commit }) {
-    const { danmakus } = await api.listDanmakus()
+    const { danmakus } = await api.listDanmakus({ ...getQueryMap() })
     commit('listDanmakus', { danmakus })
   }
 }
