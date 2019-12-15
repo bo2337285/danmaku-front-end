@@ -2,11 +2,11 @@
   <div id="app">
     <el-container class="container">
       <el-header height="auto">
-        <div>
+        <!-- <div>
             <Login />
             <span>/</span>
             <Register />
-        </div>
+        </div> -->
         <Form />
       </el-header>
       <el-main>
